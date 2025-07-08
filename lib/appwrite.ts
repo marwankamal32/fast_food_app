@@ -117,3 +117,11 @@ export const getCategories = async () => {
     throw new Error(e as string);
   }
 };
+
+export const logoutUser = async () => {
+  try {
+    await account.deleteSession("current");
+  } catch (e) {
+    throw new Error(e as string);
+  }
+};
